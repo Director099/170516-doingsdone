@@ -1,7 +1,7 @@
 # Личный проект «Дела в Порядке»
 
 * Студент: [Ярослав Шевцов](https://up.htmlacademy.ru/php/8/user/170516).
-* Наставник: `Евгений Шумейко`(https://github.com/EvgeniiShumeiko).
+* Наставник: [Евгений Шумейко](https://github.com/EvgeniiShumeiko).
 
 ---
 
