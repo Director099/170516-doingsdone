@@ -15,4 +15,16 @@
 
         return $result;
     }
+
+    function count_task($list_task, $name) {
+        $counter = 0;
+        foreach ($list_task as $key) {
+            if ($key['category'] === $name) {
+                $counter++;
+            }
+        };
+
+        return print($counter);
+    };
+
 ?>

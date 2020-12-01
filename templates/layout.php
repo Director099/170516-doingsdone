@@ -1,63 +1,3 @@
-<?php
-// показывать или нет выполненные задачи
-$show_complete_tasks = rand(0, 1);
-$head_title = '';
-$main_content = '';
-
-$projects = ['Входящие', 'Учеба', 'Работа', 'Домашние дела', 'Авто'];
-
-$tasks = [
-    [
-        'name' => 'Собеседование в IT компании',
-        'data' => '01.12.2019',
-        'category' => 'Работа',
-        'status' => false
-    ],
-    [
-        'name' => 'Выполнить тестовое задание',
-        'data' => '25.12.2019',
-        'category' => 'Работа',
-        'status' => false
-    ],
-    [
-        'name' => 'Сделать задание первого раздела',
-        'data' => '21.12.2019',
-        'category' => 'Учеба',
-        'status' => true
-    ],
-    [
-        'name' => 'Встреча с другом',
-        'data' => '22.12.2019',
-        'category' => 'Входящие',
-        'status' => false
-    ],
-    [
-        'name' => 'Купить корм для кота',
-        'data' => 'Нет',
-        'category' => 'Домашние дела',
-        'status' => false
-    ],
-    [
-        'name' => 'Заказать пиццу',
-        'data' => 'Нет',
-        'category' => 'Домашние дела',
-        'status' => false
-    ],
-];
-
-function count_task($list_task, $name) {
-    $counter = 0;
-    foreach ($list_task as $key) {
-        if ($key['category'] === $name) {
-            $counter++;
-        }
-    };
-
-    return $counter;
-};
-
-?>
-
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -88,7 +28,7 @@ function count_task($list_task, $name) {
                     </div>
 
                     <div class="user-menu__data">
-                        <p>Константин</p>
+                        <p><?= $user_name ?></p>
 
                         <a href="#">Выйти</a>
                     </div>
@@ -105,7 +45,7 @@ function count_task($list_task, $name) {
                         <? foreach ($projects as $name): ?>
                             <li class="main-navigation__list-item">
                                 <a class="main-navigation__list-item-link" href="#"><?= $name ?></a>
-                                <span class="main-navigation__list-item-count"><?= count_task($tasks, $name) ?></span>
+                                <span class="main-navigation__list-item-count"><?php count_task($tasks, $name) ?></span>
                             </li>
                         <? endforeach; ?>
                     </ul>
@@ -116,8 +56,7 @@ function count_task($list_task, $name) {
             </section>
 
             <main class="content__main">
-<!--                --><?//= $main_content ?>
-                <?php require_once('index.php') ?>
+                <?= $main_content ?>
             </main>
         </div>
     </div>
