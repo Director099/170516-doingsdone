@@ -43,10 +43,10 @@
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden" type="checkbox" <?= $value['status'] === true ? 'checked' : '' ?>>
-                        <span class="checkbox__text"><?= $value['name'] ?></span>
+                        <span class="checkbox__text"><?= htmlspecialchars($value['name']) ?></span>
                     </label>
                 </td>
-                <td class="task__date"><?= $value['data'] ?></td>
+                <td class="task__date"><?= htmlspecialchars($value['data']) ?></td>
 
                 <td class="task__controls">
                 </td>

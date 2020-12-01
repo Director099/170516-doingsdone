@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="user-menu__data">
-                        <p><?= $user_name ?></p>
+                        <p><?= htmlspecialchars($user_name) ?></p>
 
                         <a href="#">Выйти</a>
                     </div>
@@ -44,8 +44,8 @@
                     <ul class="main-navigation__list">
                         <? foreach ($projects as $name): ?>
                             <li class="main-navigation__list-item">
-                                <a class="main-navigation__list-item-link" href="#"><?= $name ?></a>
-                                <span class="main-navigation__list-item-count"><?php count_task($tasks, $name) ?></span>
+                                <a class="main-navigation__list-item-link" href="#"><?= htmlspecialchars($name) ?></a>
+                                <span class="main-navigation__list-item-count"><?php htmlspecialchars(count_task($tasks, $name)) ?></span>
                             </li>
                         <? endforeach; ?>
                     </ul>
