@@ -14,5 +14,5 @@
         'user_name' => 'Константин'
     ]);
 
-    print($layout_content)
+    print($layout_content);
 ?>

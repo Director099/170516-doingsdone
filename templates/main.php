@@ -37,6 +37,12 @@
                         <td class="task__date"></td>
                     </tr>
                     <?php */ ?>
+    <?php
+        date_default_timezone_set('Asia / Yekaterinburg');
+        $current_time = time();
+        $end_date = $tasks[0]['data'];
+        echo print_r($current_time . '<br>' . $end_date)
+    ?>
     <?php foreach ($tasks as $value): ?>
         <? if (!$value['status'] || $show_complete_tasks === 1): ?>
             <tr class="tasks__item task <?= $value['status'] === true ? 'task--completed' : '' ?>">
