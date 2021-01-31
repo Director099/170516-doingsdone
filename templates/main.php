@@ -37,23 +37,16 @@
                         <td class="task__date"></td>
                     </tr>
                     <?php */ ?>
-    <?php
-        date_default_timezone_set('Asia / Yekaterinburg');
-        $current_time = time();
-        $end_date = $tasks[0]['data'];
-        echo print_r($current_time . '<br>' . $end_date)
-    ?>
     <?php foreach ($tasks as $value): ?>
         <? if (!$value['status'] || $show_complete_tasks === 1): ?>
-            <tr class="tasks__item task <?= $value['status'] === true ? 'task--completed' : '' ?>">
+            <tr class="tasks__item task <?= $value['status'] === true ? 'task--completed' : '' ?>  <?= (deadline($value['data']) <= 24) ? 'task--important' : ''?>">
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden" type="checkbox" <?= $value['status'] === true ? 'checked' : '' ?>>
                         <span class="checkbox__text"><?= htmlspecialchars($value['name']) ?></span>
                     </label>
                 </td>
-                <td class="task__date"><?= htmlspecialchars($value['data']) ?></td>
-
+                <td class="task__date"> <?= htmlspecialchars($value['data']); ?></td>
                 <td class="task__controls">
                 </td>
             </tr>
